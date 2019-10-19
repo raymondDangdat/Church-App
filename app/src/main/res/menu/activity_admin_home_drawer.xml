@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_approve_member"
+            android:icon="@drawable/ic_group"
+            android:title="Approve Member" />
+        <item
+            android:id="@+id/nav_upload_event"
+            android:icon="@drawable/ic_event"
+            android:title="Upload Upcoming Event" />
+        <item
+            android:id="@+id/nav_manage_group"
+            android:icon="@drawable/ic_group"
+            android:title="Manage Church Groups" />
+        <item
+            android:id="@+id/nav_manage_gallery"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Manage Church Gallery" />
+        <item
+            android:id="@+id/nav_update_church_leadership"
+            android:icon="@drawable/ic_update"
+            android:title="Update Church Leadership" />
+        <item
+            android:id="@+id/nav_update_church_history"
+            android:icon="@drawable/ic_update"
+            android:title="Update Church History" />
+    </group>
+
+    <item android:title="Settings">
+        <menu>
+            <item
+                android:id="@+id/nav_change_password"
+                android:icon="@drawable/ic_lock"
+                android:title="Change Password" />
+            <item
+                android:id="@+id/nav_exit"
+                android:icon="@drawable/ic_exit"
+                android:title="Logout" />
+        </menu>
+    </item>
+</menu>

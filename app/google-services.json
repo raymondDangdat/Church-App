@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1087433189136",
+    "firebase_url": "https://church-project-3d104.firebaseio.com",
+    "project_id": "church-project-3d104",
+    "storage_bucket": "church-project-3d104.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1087433189136:android:fedfcd61db1f72aa3b6795",
+        "android_client_info": {
+          "package_name": "comq.example.raymond.chamber2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1087433189136-mjoa8tn8b3gbu5co6vjluo7tq5hnv975.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDgdiCZB7EmmZUnNqhVjRfTGLJ_JndCLoQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1087433189136-mjoa8tn8b3gbu5co6vjluo7tq5hnv975.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
