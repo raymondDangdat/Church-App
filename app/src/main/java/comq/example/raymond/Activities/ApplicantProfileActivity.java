@@ -24,7 +24,7 @@ import com.squareup.picasso.Picasso;
 import comq.example.raymond.chamber2.R;
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class MemberProfileActivity extends AppCompatActivity {
+public class ApplicantProfileActivity extends AppCompatActivity {
     private Toolbar toolbar;
 
     private String applicant_id;
@@ -41,7 +41,7 @@ public class MemberProfileActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_member_profile);
+        setContentView(R.layout.activity_applicant_profile);
 
         members = FirebaseDatabase.getInstance().getReference().child("COCINCHAMBER").child("members");
 
@@ -96,8 +96,8 @@ public class MemberProfileActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()){
                             dialog.dismiss();
-                            Toast.makeText(MemberProfileActivity.this, "Application Declined!", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(MemberProfileActivity.this, MembershipApplications.class));
+                            Toast.makeText(ApplicantProfileActivity.this, "Application Declined!", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(ApplicantProfileActivity.this, MembershipApplications.class));
                             finish();
                         }
                     }
@@ -106,7 +106,7 @@ public class MemberProfileActivity extends AppCompatActivity {
             @Override
             public void onFailure(@NonNull Exception e) {
                 dialog.dismiss();
-                Toast.makeText(MemberProfileActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(ApplicantProfileActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -122,8 +122,8 @@ public class MemberProfileActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()){
                             dialog.dismiss();
-                            Toast.makeText(MemberProfileActivity.this, "Member Approved!", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(MemberProfileActivity.this, MembershipApplications.class));
+                            Toast.makeText(ApplicantProfileActivity.this, "Member Approved!", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(ApplicantProfileActivity.this, MembershipApplications.class));
                             finish();
                         }
                     }
@@ -132,7 +132,7 @@ public class MemberProfileActivity extends AppCompatActivity {
             @Override
             public void onFailure(@NonNull Exception e) {
                 dialog.dismiss();
-                Toast.makeText(MemberProfileActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(ApplicantProfileActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }

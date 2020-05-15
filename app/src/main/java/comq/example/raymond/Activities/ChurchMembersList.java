@@ -71,7 +71,7 @@ public class ChurchMembersList extends AppCompatActivity {
                     public void onClick(View v) {
                         //get the user ID of the user clicked on
                         String clicked_user_id = getRef(position).getKey();
-                        Intent profileIntent = new Intent(ChurchMembersList.this, MemberProfileActivity.class);
+                        Intent profileIntent = new Intent(ChurchMembersList.this, ApplicantProfileActivity.class);
                         profileIntent.putExtra("clicked_user_id", clicked_user_id);
                         startActivity(profileIntent);
                     }

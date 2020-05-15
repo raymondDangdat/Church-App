@@ -71,7 +71,7 @@ public class MembershipApplications extends AppCompatActivity {
                         //get the user ID of the user clicked on
                         String clicked_user_id = getRef(position).getKey();
 
-                        Intent profileIntent = new Intent(MembershipApplications.this, MemberProfileActivity.class);
+                        Intent profileIntent = new Intent(MembershipApplications.this, ApplicantProfileActivity.class);
                         profileIntent.putExtra("clicked_user_id", clicked_user_id);
                         startActivity(profileIntent);
                     }

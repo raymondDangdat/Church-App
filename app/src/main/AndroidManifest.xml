@@ -14,7 +14,7 @@
         <activity android:name="comq.example.raymond.Activities.ChurchMembersList"
             android:parentActivityName="comq.example.raymond.Activities.AdminHome"/>
         <activity
-            android:name="comq.example.raymond.Activities.MemberProfileActivity"
+            android:name="comq.example.raymond.Activities.ApplicantProfileActivity"
             android:parentActivityName="comq.example.raymond.Activities.MembershipApplications" />
         <activity
             android:name="comq.example.raymond.Activities.MembershipApplications"
