@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="comq.example.raymond.Activities.AddEvent">
+
+    <include
+        android:id="@+id/add_event_toolbar"
+        layout="@layout/app_bar_layout"></include>
+
+    <EditText
+        android:id="@+id/editText_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/standard_margin"
+        android:layout_marginTop="@dimen/margin_top_first_view"
+        android:layout_marginEnd="@dimen/standard_margin"
+        android:drawableLeft="@drawable/ic_event"
+        android:textStyle="bold"
+        android:drawableEnd="@drawable/ic_event"
+        android:hint="Event Title"
+        android:inputType="textShortMessage|textAutoCorrect|textPersonName|textAutoComplete|textCapWords"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/add_event_toolbar" />
+
+    <EditText
+        android:id="@+id/editText_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/standard_margin"
+        android:layout_marginTop="@dimen/standard_margin"
+        android:layout_marginEnd="@dimen/standard_margin"
+        android:textStyle="bold"
+        android:drawableEnd="@drawable/ic_event"
+        android:hint="@string/even_description"
+        android:inputType="textShortMessage|textMultiLine|textAutoComplete|textImeMultiLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_title"
+        app:layout_constraintBottom_toTopOf="@+id/editText_venue"/>
+
+    <EditText
+        android:id="@+id/editText_venue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/standard_margin"
+        android:layout_marginTop="@dimen/standard_margin"
+        android:layout_marginEnd="@dimen/standard_margin"
+        android:drawableEnd="@drawable/ic_location"
+        android:hint="@string/event_venue"
+        android:textStyle="bold"
+        android:inputType="textShortMessage|textAutoComplete"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_description"
+        app:layout_constraintBottom_toTopOf="@+id/editText_event_date"/>
+
+    <TextView
+        android:id="@+id/text_event_time"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/standard_margin"
+        android:layout_marginTop="@dimen/standard_margin"
+        android:layout_marginEnd="@dimen/standard_margin"
+        android:drawableEnd="@drawable/ic_access_time"
+        android:fontFamily="@font/aclonica"
+        android:padding="10dp"
+        android:text="@string/set_event_time"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/button_publish"
+        app:layout_constraintTop_toBottomOf="@+id/textView_date" />
+
+
+    <Button
+        android:id="@+id/button_publish"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/standard_margin"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="@dimen/standard_margin"
+        android:background="@drawable/rounded_button"
+        android:fontFamily="@font/aclonica"
+        android:text="@string/publish_event"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_event_time" />
+
+    <TextView
+        android:id="@+id/textView_date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/standard_margin"
+        android:layout_marginTop="@dimen/standard_margin"
+        android:layout_marginEnd="@dimen/standard_margin"
+        android:layout_marginBottom="@dimen/standard_margin"
+        android:drawableEnd="@drawable/ic_date"
+        android:fontFamily="@font/aclonica"
+        android:padding="10dp"
+        android:text="@string/select_event_date"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/text_event_time"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_event_time" />
+
+    <EditText
+        android:id="@+id/editText_event_time"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:drawableEnd="@drawable/ic_access_time"
+        android:fontFamily="@font/aclonica"
+        android:hint="Time"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/textView_date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:visibility="gone"
+        android:padding="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/editText_event_date" />
+
+    <EditText
+        android:id="@+id/editText_event_date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:visibility="gone"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        android:drawableEnd="@drawable/ic_date"
+        android:layout_marginBottom="8dp"
+        android:padding="10dp"
+        android:fontFamily="@font/aclonica"
+        android:hint="Event Date"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/editText_event_time"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_venue" />
+
+</android.support.constraint.ConstraintLayout>

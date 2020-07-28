@@ -9,7 +9,6 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -34,14 +33,15 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.squareup.picasso.Picasso;
 
 import java.util.Date;
 
 import comq.example.raymond.Common.Common;
-import comq.example.raymond.Interface.ItemClickListener;
 import comq.example.raymond.Model.HistoryModel;
 import comq.example.raymond.Utils.ChurchUtility;
 import comq.example.raymond.chamber2.R;
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class AdminHome extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -68,10 +68,10 @@ public class AdminHome extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        recycler_history = findViewById(R.id.recycler_history);
-        recycler_history.setHasFixedSize(true);
-        layoutManager = new LinearLayoutManager(this);
-        recycler_history.setLayoutManager(layoutManager);
+//        //recycler_history = findViewById(R.id.recycler_history);
+//        recycler_history.setHasFixedSize(true);
+//        layoutManager = new LinearLayoutManager(this);
+//        recycler_history.setLayoutManager(layoutManager);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -99,39 +99,45 @@ public class AdminHome extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        loadHistory();
+        View headerView = navigationView.getHeaderView(0);
+        CircleImageView logo = headerView.findViewById(R.id.imageView_logo);
+
+        Picasso.get().load(R.drawable.logo).into(logo);
+        //loadHistory();
 
     }
-
-    private void loadHistory() {
-        FirebaseRecyclerOptions<HistoryModel>options = new FirebaseRecyclerOptions.Builder<HistoryModel>()
-                .setQuery(historyData, HistoryModel.class)
-                .build();
-        adapter = new FirebaseRecyclerAdapter<HistoryModel, ViewHolder>(options) {
-            @Override
-            protected void onBindViewHolder(@NonNull ViewHolder holder, int position, @NonNull HistoryModel model) {
-                holder.txt_history.setText(model.getHistory());
-                holder.txt_date_updated.setText("Last Updated " + ChurchUtility.dateFromLong(model.getDateUpdated()));
-                
-                holder.setItemClickListener(new ItemClickListener() {
-                    @Override
-                    public void onClick(View view, int position, boolean isLongClick) {
-                        Toast.makeText(AdminHome.this, "Mahd oo", Toast.LENGTH_SHORT).show();
-                    }
-                });
-            }
-
-            @NonNull
-            @Override
-            public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-                View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.history_layout, viewGroup,false);
-                ViewHolder viewHolder = new ViewHolder(view);
-                return viewHolder;
-            }
-        };
-        recycler_history.setAdapter(adapter);
-        adapter.startListening();
-    }
+//
+//    private void loadHistory() {
+//        FirebaseRecyclerOptions<HistoryModel>options = new FirebaseRecyclerOptions.Builder<HistoryModel>()
+//                .setQuery(historyData, HistoryModel.class)
+//                .build();
+//        adapter = new FirebaseRecyclerAdapter<HistoryModel, ViewHolder>(options) {
+//            @Override
+//            protected void onBindViewHolder(@NonNull ViewHolder holder, int position, @NonNull HistoryModel model) {
+//                holder.txt_history.setText(model.getHistory());
+//                holder.txt_date_updated.setText("Last Updated " + ChurchUtility.dateFromLong(model.getDateUpdated()));
+//
+//
+//
+//                holder.itemView.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View v) {
+//                        Toast.makeText(AdminHome.this, "Say good!", Toast.LENGTH_SHORT).show();
+//                    }
+//                });
+//            }
+//
+//            @NonNull
+//            @Override
+//            public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+//                View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.history_layout, viewGroup,false);
+//                ViewHolder viewHolder = new ViewHolder(view);
+//                return viewHolder;
+//            }
+//        };
+//        recycler_history.setAdapter(adapter);
+//        adapter.startListening();
+//    }
 
 
     private void historyDialog() {
@@ -222,15 +228,23 @@ public class AdminHome extends AppCompatActivity
             // membership application
             startActivity(new Intent(AdminHome.this, MembershipApplications.class));
 
-        } else if (id == R.id.nav_upcoming_events) {
-
+        } else if (id == R.id.nav_upload_event) {
+            Intent evenIntent = new Intent(AdminHome.this, UpcomingEventsList.class);
+            startActivity(evenIntent);
         } else if (id == R.id.nav_manage_group) {
+            Intent intent = new Intent(AdminHome.this, ChurchGroupsList.class);
+            startActivity(intent);
 
         } else if (id == R.id.nav_manage_gallery) {
+            Intent intent = new Intent(AdminHome.this, ChurchGallery.class);
+            startActivity(intent);
 
         } else if (id == R.id.nav_update_church_leadership) {
+            Intent intent = new Intent(AdminHome.this, ChurchLeadership.class);
+            startActivity(intent);
 
         } else if (id == R.id.nav_update_church_history) {
+            startActivity(new Intent(AdminHome.this, ChurchHistoryActivity.class));
 
         }else if(id == R.id.nav_change_password){
 
@@ -315,37 +329,16 @@ public class AdminHome extends AppCompatActivity
 
 
 
-    public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnCreateContextMenuListener {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView txt_date_updated, txt_history;
-        private ItemClickListener itemClickListener;
+        private TextView txt_date_updated, txt_history;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             txt_date_updated = itemView.findViewById(R.id.txt_last_updated);
             txt_history = itemView.findViewById(R.id.txt_history);
 
-
-            itemView.setOnClickListener(this);
-            itemView.setOnCreateContextMenuListener(this);
         }
 
-
-        public void setItemClickListener(ItemClickListener itemClickListener) {
-            this.itemClickListener = itemClickListener;
-        }
-
-
-        @Override
-        public void onClick(View v) {
-            itemClickListener.onClick(v, getAdapterPosition(), false);
-        }
-
-        @Override
-        public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
-            menu.setHeaderTitle("Select an action");
-            menu.add(0,0, getAdapterPosition(), Common.UPDATE);
-            menu.add(0,1, getAdapterPosition(), Common.DELETE);
-        }
     }
 }

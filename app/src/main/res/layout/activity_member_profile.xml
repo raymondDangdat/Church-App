@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="comq.example.raymond.Activities.MemberProfileActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/member_profile_toolbar"
+            layout="@layout/app_bar_layout">
+
+        </include>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/set_profile_image"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            app:civ_border_width="5dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="90dp"
+            app:civ_border_color="@color/colorPrimary"
+            android:src="@drawable/login"/>
+        <EditText
+            android:id="@+id/set_member_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/set_profile_image"
+            android:inputType="textPersonName"
+            android:hint="Member Name"
+            android:enabled="false"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
+            android:background="@drawable/edit_rounded"
+            android:padding="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginTop="5dp"
+            />
+
+        <EditText
+            android:id="@+id/set_member_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/set_member_name"
+            android:inputType="textMultiLine"
+            android:hint="Member Address"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
+            android:background="@drawable/edit_rounded"
+            android:enabled="false"
+            android:padding="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginTop="5dp"
+            />
+        <EditText
+            android:id="@+id/set_member_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/set_member_address"
+            android:inputType="textMultiLine"
+            android:hint="Phone Number"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
+            android:background="@drawable/edit_rounded"
+            android:enabled="false"
+            android:padding="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginTop="5dp"
+            />
+        <EditText
+            android:id="@+id/set_gender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/set_member_phone"
+            android:inputType="textMultiLine"
+            android:hint="Gender"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
+            android:background="@drawable/edit_rounded"
+            android:enabled="false"
+            android:padding="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginTop="5dp"
+            />
+        <EditText
+            android:id="@+id/set_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/set_gender"
+            android:inputType="textMultiLine"
+            android:hint="Member Email"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
+            android:background="@drawable/edit_rounded"
+            android:enabled="false"
+            android:padding="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginTop="5dp"
+            />
+    </RelativeLayout>
+
+</ScrollView>

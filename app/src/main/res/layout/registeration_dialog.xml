@@ -140,8 +140,10 @@
             android:background="@drawable/rounded_button"
             android:text="Register"
             android:textColor="#ffffff"
+            android:textAllCaps="false"
+            android:textSize="20sp"
             android:textStyle="bold"
-            android:fontFamily="@font/fonttt"
+            android:fontFamily="@font/aclonica"
             />
     </LinearLayout>
 </ScrollView>

@@ -1,67 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="comq.example.raymond.Activities.MainActivity">
+    <include
+        layout="@layout/app_bar_layout"
+        android:id="@+id/main_activity_toolbar">
+    </include>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="136dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/rounded_button"
+        android:fontFamily="@font/aclonica"
+        android:text="@string/login"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <include
-            layout="@layout/app_bar_layout"
-            android:id="@+id/main_activity_toolbar">
-        </include>
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <Button
-                android:id="@+id/btn_login"
-                android:layout_marginTop="200dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@android:color/white"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:background="@drawable/rounded_button"
-                android:text="Login"/>
-
-            <Button
-                android:id="@+id/btn_forgot_password"
-                android:layout_margin="15dp"
-                android:layout_width="match_parent"
-                android:textColor="@android:color/white"
-                android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:textSize="20sp"
-                android:background="@drawable/rounded_button"
-                android:text="Forgot Password?"/>
-
-
-            <Button
-                android:id="@+id/btn_register"
-                android:layout_margin="15dp"
-                android:layout_width="match_parent"
-                android:textColor="@android:color/white"
-                android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:textSize="20sp"
-                android:background="@drawable/rounded_button"
-                android:text="Register"/>
-        </LinearLayout>
-
-    </LinearLayout>
-
-
-</ScrollView>
+    <Button
+        android:id="@+id/btn_forgot_password"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/btn_login"
+        app:layout_constraintStart_toStartOf="@+id/btn_login"
+        app:layout_constraintTop_toBottomOf="@+id/btn_login"
+        android:background="@drawable/rounded_button"
+        android:fontFamily="@font/aclonica"
+        android:text="@string/forgot_password"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
+    <Button
+        android:id="@+id/btn_register"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/btn_forgot_password"
+        app:layout_constraintStart_toStartOf="@+id/btn_forgot_password"
+        android:background="@drawable/rounded_button"
+        android:fontFamily="@font/aclonica"
+        android:text="@string/register"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/btn_forgot_password" />
+</android.support.constraint.ConstraintLayout>

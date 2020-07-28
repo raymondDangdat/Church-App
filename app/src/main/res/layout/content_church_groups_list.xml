@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="comq.example.raymond.Activities.AdminHome"
-    tools:showIn="@layout/app_bar_admin_home"
-    android:background="@drawable/logo">
+    tools:context="comq.example.raymond.Activities.ChurchGroupsList"
+    tools:showIn="@layout/activity_church_groups_list">
 
-
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>

@@ -6,15 +6,50 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="comq.example.raymond.Activities.ChurchMembersList"
+        <activity android:name="comq.example.raymond.Activities.AddLeader"
+            android:parentActivityName="comq.example.raymond.Activities.ChurchLeadership"/>
+        <activity android:name="comq.example.raymond.Activities.AddToGallery" />
+        <activity
+            android:name="comq.example.raymond.Activities.ChurchGallery"
+            android:label="@string/title_activity_church_gallery"
+            android:theme="@style/AppTheme.NoActionBar"
             android:parentActivityName="comq.example.raymond.Activities.AdminHome"/>
         <activity
-            android:name="comq.example.raymond.Activities.ApplicantProfileActivity"
+            android:name="comq.example.raymond.Activities.ChurchLeadership"
+            android:label="@string/title_activity_church_leadership"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:parentActivityName="comq.example.raymond.Activities.AdminHome"/>
+        <activity android:name="comq.example.raymond.Activities.AddGroup"
+            android:parentActivityName="comq.example.raymond.Activities.ChurchGroupsList"/>
+        <activity
+            android:name="comq.example.raymond.Activities.ChurchGroupsList"
+            android:label="@string/title_activity_church_groups_list"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:parentActivityName="comq.example.raymond.Activities.AdminHome"/>
+        <activity
+            android:name="comq.example.raymond.Activities.UpcomingEventsList"
+            android:label="@string/title_activity_upcoming_events_list"
+            android:parentActivityName="comq.example.raymond.Activities.AdminHome"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="comq.example.raymond.Activities.EditChurchHistory"
+            android:parentActivityName="comq.example.raymond.Activities.ChurchHistoryActivity" />
+        <activity
+            android:name="comq.example.raymond.Activities.ChurchHistoryActivity"
+            android:parentActivityName="comq.example.raymond.Activities.AdminHome" />
+        <activity
+            android:name="comq.example.raymond.Activities.MemberProfileActivity"
+            android:parentActivityName="comq.example.raymond.Activities.ChurchMembersList" />
+        <activity
+            android:name="comq.example.raymond.Activities.ChurchMembersList"
+            android:parentActivityName="comq.example.raymond.Activities.AdminHome" />
+        <activity
+            android:name="comq.example.raymond.Activities.ApplicantProfile"
             android:parentActivityName="comq.example.raymond.Activities.MembershipApplications" />
         <activity
             android:name="comq.example.raymond.Activities.MembershipApplications"
@@ -43,6 +78,13 @@
         <activity
             android:name="comq.example.raymond.Activities.MemberSettingsActivity"
             android:parentActivityName="comq.example.raymond.Activities.MemberHome" />
+        <activity
+            android:name="comq.example.raymond.Activities.AddEvent"
+            android:parentActivityName="comq.example.raymond.Activities.UpcomingEventsList" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

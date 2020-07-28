@@ -6,7 +6,7 @@
         <item
             android:id="@+id/nav_approve_member"
             android:icon="@drawable/ic_group"
-            android:title="Approve Member(s)" />
+            android:title="Approve Member(s)" />0
         <item
             android:id="@+id/nav_church_members"
             android:icon="@drawable/ic_group"
@@ -14,23 +14,23 @@
         <item
             android:id="@+id/nav_upload_event"
             android:icon="@drawable/ic_event"
-            android:title="Upload Upcoming Event" />
+            android:title="Upcoming Events" />
         <item
             android:id="@+id/nav_manage_group"
             android:icon="@drawable/ic_group"
-            android:title="Manage Church Groups" />
+            android:title="Church Groups" />
         <item
             android:id="@+id/nav_manage_gallery"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="Manage Church Gallery" />
+            android:title="Church Gallery" />
         <item
             android:id="@+id/nav_update_church_leadership"
             android:icon="@drawable/ic_update"
-            android:title="Update Church Leadership" />
+            android:title="Church Leadership" />
         <item
             android:id="@+id/nav_update_church_history"
             android:icon="@drawable/ic_update"
-            android:title="Update Church History" />
+            android:title="Church History" />
     </group>
 
     <item android:title="Settings">
