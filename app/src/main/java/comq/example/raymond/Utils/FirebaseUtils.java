@@ -8,6 +8,7 @@ import com.google.firebase.storage.StorageReference;
 import java.util.ArrayList;
 
 import comq.example.raymond.Model.Event;
+import comq.example.raymond.Model.LeadersModel;
 
 public class FirebaseUtils {
     public static FirebaseDatabase mFirebaseDatabase;
@@ -15,7 +16,9 @@ public class FirebaseUtils {
     public static FirebaseStorage mFirebaseStorage;
     public static StorageReference mStorageReference;
     private static FirebaseUtils firebaseUtils;
+
     public static ArrayList<Event>mEvents;
+    public static ArrayList<LeadersModel>mLeadersModels;
 
     private FirebaseUtils(){}
 
@@ -26,6 +29,7 @@ public class FirebaseUtils {
             mFirebaseStorage = FirebaseStorage.getInstance();
         }
         mEvents = new ArrayList<Event>();
+        mLeadersModels = new ArrayList<LeadersModel>();
         mDatabaseReferenace = mFirebaseDatabase.getReference().child("COCINCHAMBER").child(ref);
         mStorageReference = mFirebaseStorage.getReference().child("COCINCHAMBER").child(ref);
 

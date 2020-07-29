@@ -5,11 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="comq.example.raymond.Activities.AddLeader">
-
     <include
         android:id="@+id/toolbar"
         layout="@layout/app_bar_layout"></include>
-
     <Spinner
         android:id="@+id/spinner_position"
         android:layout_width="0dp"
@@ -24,7 +22,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar" />
-
+    <Spinner
+        android:id="@+id/spinner_change_position"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="8dp"
+        android:dropDownWidth="wrap_content"
+        android:entries="@array/change_positions"
+        android:filterTouchesWhenObscured="true"
+        android:spinnerMode="dialog"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/spinner_position" />
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imageView_profile"
         android:layout_width="200dp"
@@ -34,9 +46,8 @@
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner_position"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_change_position"
         android:src="@drawable/images" />
-
     <EditText
         android:id="@+id/editText_name"
         style="@style/Base.Widget.MaterialComponents.TextInputEditText"
@@ -52,22 +63,35 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView_profile" />
-
-    <EditText
-        android:id="@+id/editText_status"
-        style="@style/Base.Widget.MaterialComponents.TextInputEditText"
+    <Spinner
+        android:id="@+id/spinner_status"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
-        android:ems="10"
-        android:hint="Staus e.g Active or Past"
-        android:inputType="textPersonName|textAutoComplete|textCapWords"
+        android:dropDownWidth="wrap_content"
+        android:entries="@array/status"
+        android:filterTouchesWhenObscured="true"
+        android:spinnerMode="dialog"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText_name" />
-
+        app:layout_constraintTop_toBottomOf="@id/editText_name" />
+    <Spinner
+        android:id="@+id/change_status"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:visibility="gone"
+        android:dropDownWidth="wrap_content"
+        android:entries="@array/change_status"
+        android:filterTouchesWhenObscured="true"
+        android:spinnerMode="dialog"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spinner_status" />
     <EditText
         android:id="@+id/editText_year"
         style="@style/Base.Widget.MaterialComponents.TextInputEditText"
@@ -81,8 +105,35 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText_status" />
-
+        app:layout_constraintTop_toBottomOf="@+id/change_status" />
+    <EditText
+        android:id="@+id/editText_position"
+        style="@style/Base.Widget.MaterialComponents.TextInputEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:visibility="gone"
+        android:hint="Position"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_year" />
+    <EditText
+        android:id="@+id/editText_status"
+        style="@style/Base.Widget.MaterialComponents.TextInputEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:visibility="gone"
+        android:hint="Service year"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_position" />
     <Button
         android:id="@+id/button_add_leader"
         android:layout_width="0dp"
@@ -93,12 +144,12 @@
         android:background="@drawable/rounded_button"
         android:fontFamily="@font/aclonica"
         android:text="Add Leader"
+        android:textAllCaps="false"
         android:textColor="@color/colorWhite"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText_phone" />
-
     <EditText
         android:id="@+id/editText_phone"
         style="@style/Base.Widget.MaterialComponents.TextInputEditText"
@@ -107,6 +158,8 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:drawableStart="@drawable/ic_phone_iphone"
+        android:drawablePadding="8dp"
         android:layout_marginBottom="8dp"
         android:ems="10"
         android:hint="Mobile Number"
@@ -115,5 +168,5 @@
         app:layout_constraintBottom_toTopOf="@+id/button_add_leader"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText_year" />
+        app:layout_constraintTop_toBottomOf="@+id/editText_status" />
 </android.support.constraint.ConstraintLayout>

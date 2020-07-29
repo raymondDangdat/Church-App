@@ -83,7 +83,6 @@ public class MemberProfileActivity extends AppCompatActivity {
                     editTextPhone.setText(phone);
                     editTextGender.setText(gender);
                 }else {
-
                     name = dataSnapshot.child("name").getValue().toString();
                     address = dataSnapshot.child("address").getValue().toString();
                     email = dataSnapshot.child("email").getValue().toString();
